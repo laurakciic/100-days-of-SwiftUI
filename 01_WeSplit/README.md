@@ -22,8 +22,8 @@ From [Hacking with Swift](https://www.hackingwithswift.com/books/ios-swiftui/wes
 
 ## App Preview
 
-![video1](gitAssets/img1.png)
-![video2](gitAssets/img2.png)
+![image1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/01_WeSplit/01_WeSplit/gitAssets/img1.png)
+![image2](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/01_WeSplit/01_WeSplit/gitAssets/img2.png)
 
 ## 📝 [Quiz Highlights](https://www.hackingwithswift.com/review/ios-swiftui/wesplit)
 
