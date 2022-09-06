@@ -11,10 +11,6 @@
 		D338936428C756CC00FF7C06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338936328C756CC00FF7C06 /* ContentView.swift */; };
 		D338936628C756CD00FF7C06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D338936528C756CD00FF7C06 /* Assets.xcassets */; };
 		D338936928C756CD00FF7C06 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D338936828C756CD00FF7C06 /* Preview Assets.xcassets */; };
-		D338937428C7B49900FF7C06 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = D338937028C7B49900FF7C06 /* img2.png */; };
-		D338937528C7B49900FF7C06 /* video1.mov in Resources */ = {isa = PBXBuildFile; fileRef = D338937128C7B49900FF7C06 /* video1.mov */; };
-		D338937628C7B49900FF7C06 /* video2.mov in Resources */ = {isa = PBXBuildFile; fileRef = D338937228C7B49900FF7C06 /* video2.mov */; };
-		D338937728C7B49900FF7C06 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = D338937328C7B49900FF7C06 /* img1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,10 +19,6 @@
 		D338936328C756CC00FF7C06 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D338936528C756CD00FF7C06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D338936828C756CD00FF7C06 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D338937028C7B49900FF7C06 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
-		D338937128C7B49900FF7C06 /* video1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video1.mov; sourceTree = "<group>"; };
-		D338937228C7B49900FF7C06 /* video2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video2.mov; sourceTree = "<group>"; };
-		D338937328C7B49900FF7C06 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +51,6 @@
 		D338936028C756CC00FF7C06 /* 01_WeSplit */ = {
 			isa = PBXGroup;
 			children = (
-				D338936F28C7B47000FF7C06 /* gitAssets */,
 				D338936128C756CC00FF7C06 /* _1_WeSplitApp.swift */,
 				D338936328C756CC00FF7C06 /* ContentView.swift */,
 				D338936528C756CD00FF7C06 /* Assets.xcassets */,
@@ -74,17 +65,6 @@
 				D338936828C756CD00FF7C06 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		D338936F28C7B47000FF7C06 /* gitAssets */ = {
-			isa = PBXGroup;
-			children = (
-				D338937328C7B49900FF7C06 /* img1.png */,
-				D338937028C7B49900FF7C06 /* img2.png */,
-				D338937128C7B49900FF7C06 /* video1.mov */,
-				D338937228C7B49900FF7C06 /* video2.mov */,
-			);
-			path = gitAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,10 +127,6 @@
 			files = (
 				D338936928C756CD00FF7C06 /* Preview Assets.xcassets in Resources */,
 				D338936628C756CD00FF7C06 /* Assets.xcassets in Resources */,
-				D338937528C7B49900FF7C06 /* video1.mov in Resources */,
-				D338937628C7B49900FF7C06 /* video2.mov in Resources */,
-				D338937428C7B49900FF7C06 /* img2.png in Resources */,
-				D338937728C7B49900FF7C06 /* img1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
