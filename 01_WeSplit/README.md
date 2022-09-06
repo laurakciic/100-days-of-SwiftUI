@@ -3,7 +3,7 @@
 
 This project is a check-sharing app that calculates how to split check based on the number of people & how much tip you want to leave.
 
-![image1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/01_WeSplit/01_WeSplit/gitAssets/regular.png)
+![image1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/01_WeSplit/01_WeSplit/gitAssets/plain.png)
 
 ## Topics
 
