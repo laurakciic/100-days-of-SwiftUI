@@ -15,15 +15,15 @@ This project is a check-sharing app that calculates how to split check based on 
 ## 💡 Challenges 
 
 From [Hacking with Swift](https://www.hackingwithswift.com/books/ios-swiftui/wesplit-wrap-up):
->[1.](https://github.com/laurakciic/100-days-of-SwiftUI/commit/4e144397d3dafffcca98566883e5caf7fc17082d) Add a header to the third section, saying “Amount per person”.
->[2.](https://github.com/laurakciic/100-days-of-SwiftUI/commit/191bc53106b6decedda11aeb4df7fd0442ed2d86) Add another section showing the total amount for the check – i.e., the original amount plus tip value, without dividing by the number of people.
->[3.](https://github.com/laurakciic/100-days-of-SwiftUI/commit/8cb1f391c82b25a97dc70b950a4056e88bf9a48f) Change the “Number of people” picker to be a text field, making sure to use the correct keyboard type.
->[Extra challenge](https://github.com/laurakciic/100-days-of-SwiftUI/commit/76480ddbe448e9139f5fc6016ebe3107500d7a79) - Rather than having to type .currency(code: Locale.current.currencyCode ?? "USD") in two places, can you make a new property to store the currency formatter? You’ll need to give your property a specific return type in order to keep the rest of your code happy: FloatingPointFormatStyle<Double>.Currency
+>[1.](https://github.com/laurakciic/100-days-of-SwiftUI/commit/4e144397d3dafffcca98566883e5caf7fc17082d) Add a header to the third section, saying “Amount per person”.       
+>[2.](https://github.com/laurakciic/100-days-of-SwiftUI/commit/191bc53106b6decedda11aeb4df7fd0442ed2d86) Add another section showing the total amount for the check – i.e., the original amount plus tip value, without dividing by the number of people.            
+>[3.](https://github.com/laurakciic/100-days-of-SwiftUI/commit/8cb1f391c82b25a97dc70b950a4056e88bf9a48f) Change the “Number of people” picker to be a text field, making sure to use the correct keyboard type.            
+>[Extra challenge](https://github.com/laurakciic/100-days-of-SwiftUI/commit/76480ddbe448e9139f5fc6016ebe3107500d7a79) - Rather than having to type .currency(code: Locale.current.currencyCode ?? "USD") in two places, can you make a new property to store the currency formatter? You’ll need to give your property a specific return type in order to keep the rest of your code happy: FloatingPointFormatStyle<Double>.Currency      
 
 ## App Preview
 
-![video1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/01_WeSplit/01_WeSplit/gitAssets/video1.mov)
-![video2](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/01_WeSplit/01_WeSplit/gitAssets/video2.mov)
+![video1](gitAssets/img1.png)
+![video2](gitAssets/img2.png)
 
 ## 📝 [Quiz Highlights](https://www.hackingwithswift.com/review/ios-swiftui/wesplit)
 
