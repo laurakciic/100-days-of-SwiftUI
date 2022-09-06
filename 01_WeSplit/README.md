@@ -3,6 +3,8 @@
 
 This project is a check-sharing app that calculates how to split check based on the number of people & how much tip you want to leave.
 
+![image1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/01_WeSplit/01_WeSplit/gitAssets/normal.png)
+
 ## Topics
 
 - Form, Section, NavigationView
@@ -18,6 +20,9 @@ From [Hacking with Swift](https://www.hackingwithswift.com/books/ios-swiftui/wes
 >[1.](https://github.com/laurakciic/100-days-of-SwiftUI/commit/4e144397d3dafffcca98566883e5caf7fc17082d) Add a header to the third section, saying “Amount per person”.       
 >[2.](https://github.com/laurakciic/100-days-of-SwiftUI/commit/191bc53106b6decedda11aeb4df7fd0442ed2d86) Add another section showing the total amount for the check – i.e., the original amount plus tip value, without dividing by the number of people.            
 >[3.](https://github.com/laurakciic/100-days-of-SwiftUI/commit/8cb1f391c82b25a97dc70b950a4056e88bf9a48f) Change the “Number of people” picker to be a text field, making sure to use the correct keyboard type.            
+
+<br/>
+
 >[Extra challenge](https://github.com/laurakciic/100-days-of-SwiftUI/commit/76480ddbe448e9139f5fc6016ebe3107500d7a79) - Rather than having to type .currency(code: Locale.current.currencyCode ?? "USD") in two places, can you make a new property to store the currency formatter? You’ll need to give your property a specific return type in order to keep the rest of your code happy: FloatingPointFormatStyle<Double>.Currency      
 
 ## 📝 [Quiz Highlights](https://www.hackingwithswift.com/review/ios-swiftui/wesplit)
@@ -39,9 +44,7 @@ If we want to modify a property, we need to use a SwiftUI property wrapper such 
 Whenever an ```@State``` property changes, Swift re-invokes our body property.
 >This behavior forces all values inside the body to be re-evaluated, making sure they are updated for the changes.
 
-## App Preview
 
-![image1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/01_WeSplit/01_WeSplit/gitAssets/normal.png)
 
 
 
