@@ -44,7 +44,7 @@ struct ContentView: View {
                     
                     Picker("Number of people", selection: $numberOfPeople) {
                         ForEach(2..<100) {
-                            Text("\($0) people")
+                            Text("\($0) people")     // $0 is shorthand syntax for closure parameters
                         }
                     }
                 }
