@@ -6,7 +6,7 @@ This repo will contain various technique, game & classic app projects following 
 
 ## 📒 Projects
 
-Projects have helped & guided me through Swift & SwiftUI, but also offered me the opportunity to solve a couple of challenges within each one.
+Projects have helped & guided me through Swift & SwiftUI, but also offered me the opportunity to solve a couple of bugs & features within each one.
 
 ## 🏆 Challenges
 
