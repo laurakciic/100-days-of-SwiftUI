@@ -18,19 +18,28 @@ struct ContentView: View {
     let tipPercentages = [0, 5, 10, 15, 20, 25]
     
     var body: some View {
-        Form {
-            Section {
+        NavigationView {
+            Form {
+                Section {
+                    
+                    // $ allows two-way binding so the var gets updated with user input
+                    
+                    TextField("Amount", value: $checkAmount, format:
+                        .currency(code: Locale.current.currencyCode ?? "EUR"))
+                        .keyboardType(.decimalPad)
+                    
+                    Picker("Number of people", selection: $numberOfPeople) {
+                        ForEach(2..<100) {
+                            Text("\($0) people")
+                        }
+                    }
+                }
                 
-                // $ allows two-way binding so the var gets updated with user input
-                
-                TextField("Amount", value: $checkAmount, format:
-                    .currency(code: Locale.current.currencyCode ?? "EUR"))
-                    .keyboardType(.decimalPad)
+                Section {
+                    Text(checkAmount, format: .currency(code: Locale.current.currencyCode ?? "EUR"))
+                }
             }
-            
-            Section {
-                Text(checkAmount, format: .currency(code: Locale.current.currencyCode ?? "EUR"))
-            }
+            .navigationTitle("WeSplit")
         }
     }
 }
