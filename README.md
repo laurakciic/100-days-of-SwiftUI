@@ -26,5 +26,5 @@ Projects / Topics                                                               
 ---                                                                                                                                                                          |---
 [Project 1](01_WeSplit) - *WeSplit* <br/>                                         <br/><sub> Form, Section, NavigationView, @State Property Wrapper, TextField, Picker, ForEach </sub> | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/01_WeSplit/01_WeSplit/gitAssets/mini.png) |
 [Challenge 1](Challenge1_Conversions) - *Converter*  | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/Challenge1_Conversions/Challenge1_Conversions/gitAssets/small.png) |
-[Project 2](03_Guess_The_Flag) - *Guess the Flag* <br/>                                        <br/><sub> VStack, Image, Alert </sub> | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/02_Guess_The_Flag/02_Guess_The_Flag/gitAssets/mini1.png) ![screen2](03-Project2/screenshots/small/screen02.png) |
+[Project 2](03_Guess_The_Flag) - *Guess the Flag* <br/>                                        <br/><sub> VStack, Image, Alert </sub> | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/02_Guess_The_Flag/02_Guess_The_Flag/gitAssets/mini1.png) |
 
