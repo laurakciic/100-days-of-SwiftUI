@@ -9,13 +9,48 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var input = 0.0
-    @State private var inputUnit = "days"
-    @State private var outputUnit   = "hours"
+    @State private var input      = 0.0
+    @State private var inputUnit  = "days"
+    @State private var outputUnit = "hours"
     
     @FocusState private var amountFocused: Bool
     
     let units = ["seconds", "minutes", "hours", "days"]
+    
+    var solution: String {
+        let inputToSecondsMultiplier: Double
+        let secondsToOutputDivider:   Double
+        
+        switch inputUnit {
+        case "minutes":
+            inputToSecondsMultiplier = 60.0
+        case "hours":
+            inputToSecondsMultiplier = 3600.0
+        case "days":
+            inputToSecondsMultiplier = 86400.0
+        default:
+            inputToSecondsMultiplier = 1.0
+        }
+        
+        switch outputUnit {
+        case "minutes":
+            secondsToOutputDivider = 60.0
+        case "hours":
+            secondsToOutputDivider = 3600.0
+        case "days":
+            secondsToOutputDivider = 86400.0
+        default:
+            secondsToOutputDivider = 1.0
+        }
+        
+        var output = 0.0
+        output = (input * inputToSecondsMultiplier)/secondsToOutputDivider
+        
+        let inputString  = input.formatted()  + " \(inputUnit)"
+        let outputString = output.formatted() + " \(outputUnit)"
+        
+        return "\(inputString) equals \(outputString)."
+    }
     
     var body: some View {
         NavigationView {
@@ -52,7 +87,7 @@ struct ContentView: View {
                 }
                 
                 Section {
-                    Text("\(input) \(inputUnit) equals ... \(outputUnit).")
+                    Text(solution)
                 } header: {
                     Text("conversion")
                 }
