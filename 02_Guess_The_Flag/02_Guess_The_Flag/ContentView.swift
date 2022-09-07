@@ -10,7 +10,9 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var score        = 0
+    @State private var round        = 1
     @State private var showingScore = false
+    @State private var showingEnd   = false
     @State private var scoreTitle   = ""
     @State private var message      = ""
     
@@ -62,16 +64,30 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                Text("Score: \(score)")
-                    .foregroundColor(.white)
-                    .font(.title.bold())
+                VStack(spacing: 10) {
+                    Text("Score: \(score)")
+                        .foregroundColor(.white)
+                        .font(.title.bold())
+                    
+                    Text("Round: \(round)")
+                        .foregroundStyle(.secondary)
+                        .font(.subheadline.weight(.bold))
+                }
                 
                 Spacer()
             }
             .padding()
         }
+        
         .alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue", action: askQuestion)
+        } message: {
+            Text(message)
+        }
+        
+        .alert(scoreTitle, isPresented: $showingEnd) {
+            Button("Cancel", role: .cancel) { }
+            Button("New round", action: askQuestion)
         } message: {
             Text(message)
         }
@@ -92,8 +108,18 @@ struct ContentView: View {
     }
     
     func askQuestion() {
-        countries.shuffle()
-        correctAnswer = Int.random(in: 0...2)
+        if round < 8 {
+            countries.shuffle()
+            correctAnswer = Int.random(in: 0...2)
+            round        += 1
+        } else {
+            scoreTitle = "Round 8/8"
+            message    = "Your final score is \(score)."
+            
+            round      = 0
+            score      = 0
+            showingEnd = true
+        }
     }
 }
 
