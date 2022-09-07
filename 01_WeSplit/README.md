@@ -13,7 +13,9 @@ This project is a check-sharing app that calculates how to split check based on 
     - allows value to be stored separately by SwiftUI in a place that can be modified
     - allows us to work around limitations of structs (struct's properties are immutable)
     - immutable -> can't change values freely
-    
+
+<br/>
+
 ## 💡 Challenges 
 
 From [Hacking with Swift](https://www.hackingwithswift.com/books/ios-swiftui/wesplit-wrap-up):
@@ -24,6 +26,8 @@ From [Hacking with Swift](https://www.hackingwithswift.com/books/ios-swiftui/wes
 <br/>
 
 >[Extra challenge](https://github.com/laurakciic/100-days-of-SwiftUI/commit/76480ddbe448e9139f5fc6016ebe3107500d7a79) - Rather than having to type .currency(code: Locale.current.currencyCode ?? "USD") in two places, can you make a new property to store the currency formatter? You’ll need to give your property a specific return type in order to keep the rest of your code happy: FloatingPointFormatStyle<Double>.Currency      
+
+<br/>
 
 ## 📝 [Quiz Highlights](https://www.hackingwithswift.com/review/ios-swiftui/wesplit)
 
