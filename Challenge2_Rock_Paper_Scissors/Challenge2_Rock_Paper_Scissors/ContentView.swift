@@ -60,7 +60,7 @@ struct ContentView: View {
             Button(action: {
                 self.gameMode = (self.gameMode == .normal ? .timed : .normal)
             }, label: {
-                Text(gameMode == .normal ? "Untimed game" : "Timed game, remaining \(remainingTime)s")
+                Text(gameMode == .normal ? "Untimed game" : "Timed game, remaining \(remainingTime.formatted())s")
                     .padding()
             })
             .onReceive(ContentView.timer) { _ in
