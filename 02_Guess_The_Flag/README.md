@@ -23,7 +23,7 @@ From [Hacking with Swift](https://www.hackingwithswift.com/books/ios-swiftui/gue
 
 <br/>
 
-## 📝 [Quiz Highlights](https://www.hackingwithswift.com/review/ios-swiftui/wesplit)
+## 📝 [Quiz Highlights](https://www.hackingwithswift.com/review/ios-swiftui/guess-the-flag)
 
 Semantic colors are colors that are named according to their use rather than according to their hue.
 >For example, Color.primary might be light or dark depending on the device theme.   
