@@ -11,6 +11,7 @@
 		D39C9F8A28C9F1AB00A9CC21 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C9F8928C9F1AB00A9CC21 /* ContentView.swift */; };
 		D39C9F8C28C9F1AC00A9CC21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D39C9F8B28C9F1AC00A9CC21 /* Assets.xcassets */; };
 		D39C9F8F28C9F1AC00A9CC21 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D39C9F8E28C9F1AC00A9CC21 /* Preview Assets.xcassets */; };
+		D39C9F9628CA01A600A9CC21 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D39C9F9528CA01A600A9CC21 /* SleepCalculator.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		D39C9F8928C9F1AB00A9CC21 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D39C9F8B28C9F1AC00A9CC21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D39C9F8E28C9F1AC00A9CC21 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D39C9F9528CA01A600A9CC21 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				D39C9F8728C9F1AB00A9CC21 /* _4_BetterRestApp.swift */,
 				D39C9F8928C9F1AB00A9CC21 /* ContentView.swift */,
+				D39C9F9528CA01A600A9CC21 /* SleepCalculator.mlmodel */,
 				D39C9F8B28C9F1AC00A9CC21 /* Assets.xcassets */,
 				D39C9F8D28C9F1AC00A9CC21 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D39C9F9628CA01A600A9CC21 /* SleepCalculator.mlmodel in Sources */,
 				D39C9F8A28C9F1AB00A9CC21 /* ContentView.swift in Sources */,
 				D39C9F8828C9F1AB00A9CC21 /* _4_BetterRestApp.swift in Sources */,
 			);
