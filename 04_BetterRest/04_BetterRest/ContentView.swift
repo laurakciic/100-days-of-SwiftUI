@@ -39,6 +39,11 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("Daily coffee intake").font(.subheadline)) {
+//                    Picker("Select amount", selection: $coffeeAmout) {
+//                        ForEach(1...20, id: \.self) { amount in
+//                            Text("\(amount) \(amount == 1 ? "cup" : "cups")")
+//                        }
+//                    }
                     Stepper(coffeeAmout == 1 ? "1 cup" : "\(coffeeAmout) cups", value: $coffeeAmout, in: 1...20)
                 }
             }
