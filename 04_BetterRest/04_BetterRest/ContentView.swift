@@ -29,25 +29,16 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section {
-                    Text("When do you want to wake up?")
-                        .font(.headline)
-                    
+                Section(header: Text("When do you want to wake up?").font(.subheadline)) {
                     DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
                         .labelsHidden()
                 }
                 
-                Section {
-                    Text("Desired amount of sleep")
-                        .font(.headline)
-                    
+                Section(header: Text("Desired amount of sleep").font(.subheadline)) {
                     Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
                 }
                 
-                Section {
-                    Text("Daily coffee intake")
-                        .font(.headline)
-                    
+                Section(header: Text("Daily coffee intake").font(.subheadline)) {
                     Stepper(coffeeAmout == 1 ? "1 cup" : "\(coffeeAmout) cups", value: $coffeeAmout, in: 1...20)
                 }
             }
