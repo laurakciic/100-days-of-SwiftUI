@@ -26,5 +26,10 @@ Projects / Topics                                                               
 ---                                                                                                                                                                          |---
 [Project 1](01_WeSplit) - *WeSplit* <br/>                                         <br/><sub> Form, Section, NavigationView, @State Property Wrapper, TextField, Picker, ForEach </sub> | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/01_WeSplit/01_WeSplit/gitAssets/mini.png) |
 [Challenge 1](Challenge1_Conversions) - *Converter*  | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/Challenge1_Conversions/Challenge1_Conversions/gitAssets/small.png) |
-[Project 2](03_Guess_The_Flag) - *Guess the Flag* <br/>                                        <br/><sub> VStack, Image, Alert </sub> | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/02_Guess_The_Flag/02_Guess_The_Flag/gitAssets/mini1.png) |
+[Project 2](03_Guess_The_Flag) - *Guess the Flag* <br/>                                        <br/><sub> VStack, HStack, ZStack, Image, Alert </sub> | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/02_Guess_The_Flag/02_Guess_The_Flag/gitAssets/mini1.png) |
+[Project 3](04_Views&Modifiers) - *Views & Modifiers* <br/>                                        <br/><sub> Views, Modifiers, Composition, Containers </sub> | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/03_Views%26Modifiers/03_Views%26Modifiers/gitAssets/mini.png) |
+[Challenge 2](Challenge2_Rock_Paper_Scissors) - *Rock Paper Scissors*  | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/Challenge2_Rock_Paper_Scissors/Challenge2_Rock_Paper_Scissors/gitAssets/mini.png) |
+[Project 4](04_BetterRest) - *BetterRest* <br/>                                       <br/><sub> Machine Learning, Dates (DatePicker, DateComponents, DateFormatter), Stepper </sub> | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/04_BetterRest/04_BetterRest/gitAssets/mini.png) |
+
+
 
