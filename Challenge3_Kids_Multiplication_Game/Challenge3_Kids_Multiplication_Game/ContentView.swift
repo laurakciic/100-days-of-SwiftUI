@@ -8,38 +8,61 @@
 import SwiftUI
 
 struct ContentView: View {
+    var body: some View {
+        SettingsScreen()
+    }
+}
+
+struct SettingsScreen: View {
     
-    @State private var selectedTableChoice = 2
-    @State private var selectedNumberOfQuestions = 5
-    @State private var numberOfQuestions        = [5, 10, 15, 25, 50]
+    @State private var selectedTable                    = 2
+    @State static private var selectedNumberOfQuestions = 5
+    @State private var numberOfQuestions                = [5, 10, 15, 25, 50]
+    
+    @State private var questionNumber = Int.random(in: 0..<selectedNumberOfQuestions)
+    @State private var questions      = [Question]()
+    
+    @State private var currentQuestion = 0
+    @State private var answer          = ""
     
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("multiplication table range").font(.subheadline)) {
-                    Stepper("\(selectedTableChoice)", value: $selectedTableChoice, in: 2...12)
+                    Stepper("\(selectedTable)", value: $selectedTable, in: 2...12)
                 }
                 
                 Section(header: Text("number of questions").font(.subheadline)) {
-                    Picker("", selection: $selectedNumberOfQuestions) {
+                    Picker("", selection: SettingsScreen.$selectedNumberOfQuestions) {
                         ForEach(numberOfQuestions, id: \.self) {
                             Text($0, format: .number)
                         }
                     }
                     .pickerStyle(.segmented)
                 }
-                
-                VStack {
-                    HStack {
-                        Spacer()
-                        Button("START") {
-                            
-                        }
-                        Spacer()
-                    }
+
+                HStack {
+                    NavigationLink(destination: GameScreen(table: selectedTable, questions: questionNumber),
+                    label: {
+                        Text("START")
+                            .fontWeight(.bold)
+                    })
+                    .padding()
                 }
             }
             .navigationBarTitle("Multiplication")
+        }
+    }
+}
+
+struct GameScreen: View {
+    
+    var table: Int
+    var questions: Int
+    
+    var body: some View {
+        HStack {
+            Text("hi")
         }
     }
 }

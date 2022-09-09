@@ -11,6 +11,8 @@
 		D3EB0E3728CB133F006BF1FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB0E3628CB133F006BF1FF /* ContentView.swift */; };
 		D3EB0E3928CB1340006BF1FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EB0E3828CB1340006BF1FF /* Assets.xcassets */; };
 		D3EB0E3C28CB1340006BF1FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EB0E3B28CB1340006BF1FF /* Preview Assets.xcassets */; };
+		D3EB0E4328CB2FBE006BF1FF /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB0E4228CB2FBE006BF1FF /* Question.swift */; };
+		D3EB0E4528CB2FCD006BF1FF /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB0E4428CB2FCD006BF1FF /* Questions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		D3EB0E3628CB133F006BF1FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D3EB0E3828CB1340006BF1FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3EB0E3B28CB1340006BF1FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D3EB0E4228CB2FBE006BF1FF /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		D3EB0E4428CB2FCD006BF1FF /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				D3EB0E3428CB133F006BF1FF /* Challenge3_Kids_Multiplication_GameApp.swift */,
 				D3EB0E3628CB133F006BF1FF /* ContentView.swift */,
+				D3EB0E4228CB2FBE006BF1FF /* Question.swift */,
+				D3EB0E4428CB2FCD006BF1FF /* Questions.swift */,
 				D3EB0E3828CB1340006BF1FF /* Assets.xcassets */,
 				D3EB0E3A28CB1340006BF1FF /* Preview Content */,
 			);
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EB0E4328CB2FBE006BF1FF /* Question.swift in Sources */,
+				D3EB0E4528CB2FCD006BF1FF /* Questions.swift in Sources */,
 				D3EB0E3728CB133F006BF1FF /* ContentView.swift in Sources */,
 				D3EB0E3528CB133F006BF1FF /* Challenge3_Kids_Multiplication_GameApp.swift in Sources */,
 			);
