@@ -8,9 +8,39 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var selectedTableChoice = 2
+    @State private var selectedNumberOfQuestions = 5
+    @State private var numberOfQuestions        = [5, 10, 15, 25, 50]
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            Form {
+                Section(header: Text("multiplication table range").font(.subheadline)) {
+                    Stepper("\(selectedTableChoice)", value: $selectedTableChoice, in: 2...12)
+                }
+                
+                Section(header: Text("number of questions").font(.subheadline)) {
+                    Picker("", selection: $selectedNumberOfQuestions) {
+                        ForEach(numberOfQuestions, id: \.self) {
+                            Text($0, format: .number)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                }
+                
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button("START") {
+                            
+                        }
+                        Spacer()
+                    }
+                }
+            }
+            .navigationBarTitle("Multiplication")
+        }
     }
 }
 
