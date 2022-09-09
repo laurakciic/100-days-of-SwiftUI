@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(expenses.items) { item in   // identify every item uniquely by name
+                ForEach(expenses.items) { item in               // identify every item uniquely by name
                     Text(item.name)
                 }
                 .onDelete(perform: removeItems)
