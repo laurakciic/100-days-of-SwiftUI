@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        GeometryReader { geo in
+            Image("aldrin")
+                .resizable()                                                // make image scaleable & stretchable
+                .scaledToFit()
+                .frame(width: geo.size.width * 1)                           // 100% width
+                .frame(width: geo.size.width, height: geo.size.height)      // align image
+        }
     }
 }
 
