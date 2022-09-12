@@ -15,22 +15,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(expenses.items) { item in               // identify every item uniquely by name
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
-                        }
-                        Spacer()
-                        
-                        Text(item.amount, format: .localCurrency)
-                            .colorStyle(for: item)
-                            //.titleStyle(for: item)
-                        
-                    }
-                }
-                .onDelete(perform: removeItems)
+                ExpenseSection(title: "Business", expenses: expenses.businessItems, deleteItems: removeBusinessItems)
+                ExpenseSection(title: "Personal", expenses: expenses.personalItems, deleteItems: removePersonalItems)
             }
             .navigationTitle("iExpense")
             .toolbar {
@@ -46,8 +32,27 @@ struct ContentView: View {
         }
     }
     
-    func removeItems(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
+    func removeItems(at offsets: IndexSet, in inputArray: [ExpenseItem]) {  // needs to know which inputArray it's reading from (personal/business)
+        var objectsToDelete = IndexSet()                                    // new IndexSet by locating each item in the full arrray
+        
+        for offset in offsets {
+            let item = inputArray[offset]                                   // locating each item?
+            
+            if let index = expenses.items.firstIndex(of: item) {
+                objectsToDelete.insert(index)
+            }
+        }
+        
+        expenses.items.remove(atOffsets: objectsToDelete)                   // deleting in bulk using remove(atOffsets:) like before
+    }
+    
+    // wrapping in two simper methods that SwiftUI can call directly from onDelete()
+    func removePersonalItems(at offsets: IndexSet) {
+        removeItems(at: offsets, in: expenses.personalItems)
+    }
+    
+    func removeBusinessItems(at offsets: IndexSet) {
+        removeItems(at: offsets, in: expenses.businessItems)
     }
 }
 

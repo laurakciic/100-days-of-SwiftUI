@@ -8,6 +8,16 @@
 import Foundation
 
 class Expenses: ObservableObject {
+    
+    // challenge 3 - start by adding computed properties
+    var personalItems: [ExpenseItem] {
+        items.filter { $0.type == "Personal" }
+    }
+    
+    var businessItems: [ExpenseItem] {
+        items.filter { $0.type == "Business" }
+    }
+    
     @Published var items = [ExpenseItem]()  {    // array of all expenses
         didSet {            
             if let encoded = try? JSONEncoder().encode(items) {

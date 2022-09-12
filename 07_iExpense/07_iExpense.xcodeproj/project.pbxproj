@@ -16,6 +16,7 @@
 		D3EB0E6528CB5997006BF1FF /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB0E6428CB5997006BF1FF /* AddView.swift */; };
 		D3EB0E6728CF1BD1006BF1FF /* LocalCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB0E6628CF1BD1006BF1FF /* LocalCurrency.swift */; };
 		D3EB0E6928CF1D58006BF1FF /* View-ExpenseStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB0E6828CF1D58006BF1FF /* View-ExpenseStyle.swift */; };
+		D3EB0E6B28CF2640006BF1FF /* ExpenseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB0E6A28CF2640006BF1FF /* ExpenseSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D3EB0E6428CB5997006BF1FF /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		D3EB0E6628CF1BD1006BF1FF /* LocalCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCurrency.swift; sourceTree = "<group>"; };
 		D3EB0E6828CF1D58006BF1FF /* View-ExpenseStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View-ExpenseStyle.swift"; sourceTree = "<group>"; };
+		D3EB0E6A28CF2640006BF1FF /* ExpenseSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				D3EB0E5228CB3E33006BF1FF /* _7_iExpenseApp.swift */,
 				D3EB0E5428CB3E33006BF1FF /* ContentView.swift */,
+				D3EB0E6A28CF2640006BF1FF /* ExpenseSection.swift */,
 				D3EB0E6828CF1D58006BF1FF /* View-ExpenseStyle.swift */,
 				D3EB0E6428CB5997006BF1FF /* AddView.swift */,
 				D3EB0E6628CF1BD1006BF1FF /* LocalCurrency.swift */,
@@ -156,6 +159,7 @@
 				D3EB0E5528CB3E33006BF1FF /* ContentView.swift in Sources */,
 				D3EB0E6728CF1BD1006BF1FF /* LocalCurrency.swift in Sources */,
 				D3EB0E6928CF1D58006BF1FF /* View-ExpenseStyle.swift in Sources */,
+				D3EB0E6B28CF2640006BF1FF /* ExpenseSection.swift in Sources */,
 				D3EB0E6528CB5997006BF1FF /* AddView.swift in Sources */,
 				D3EB0E6128CB53A7006BF1FF /* ExpenseItem.swift in Sources */,
 				D3EB0E5328CB3E33006BF1FF /* _7_iExpenseApp.swift in Sources */,
