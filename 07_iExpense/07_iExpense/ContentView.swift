@@ -25,7 +25,8 @@ struct ContentView: View {
                         Spacer()
                         
                         Text(item.amount, format: .localCurrency)
-                            .foregroundColor(expenseStyle(forAmount: Int(item.amount)))
+                            .colorStyle(for: item)
+                            //.titleStyle(for: item)
                         
                     }
                 }
@@ -47,17 +48,6 @@ struct ContentView: View {
     
     func removeItems(at offsets: IndexSet) {
         expenses.items.remove(atOffsets: offsets)
-    }
-    
-    func expenseStyle(forAmount amount: Int) -> Color {
-        switch amount {
-        case Int.min...10:
-            return .green
-        case 11...100:
-            return .orange
-        default:
-            return .red
-        }
     }
 }
 
