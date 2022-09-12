@@ -18,8 +18,6 @@ struct AddView: View {
     
     let types = ["Business", "Personal"]
     
-    let localCurrency: FloatingPointFormatStyle<Double>.Currency = .currency(code: Locale.current.currencyCode ?? "EUR")
-    
     var body: some View {
         NavigationView {
             Form {
@@ -31,7 +29,7 @@ struct AddView: View {
                     }
                 }
                 
-                TextField("Amount", value: $amount, format: localCurrency)
+                TextField("Amount", value: $amount, format: .localCurrency)
                     .keyboardType(.decimalPad)
             }
             .navigationTitle("Add new expense")
