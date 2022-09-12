@@ -7,14 +7,29 @@
 
 import SwiftUI
 
+struct CustomText: View {
+    let text: String
+    
+    var body: some View {
+        Text(text)
+    }
+    
+    init(_ text: String) {
+        print("Creating new CustomText")
+        self.text = text
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        GeometryReader { geo in
-            Image("aldrin")
-                .resizable()                                                // make image scaleable & stretchable
-                .scaledToFit()
-                .frame(width: geo.size.width * 1)                           // 100% width
-                .frame(width: geo.size.width, height: geo.size.height)      // align image
+        ScrollView(.horizontal) {               // horizontal scroll view
+            LazyHStack(spacing: 10) {           // with Lazy code runs efficiently (on demand creating rows)
+                ForEach(0..<100) {
+                    Text("Buhtlica \($0)")
+                        .font(.title)
+                }
+            }
+            .frame(maxWidth: .infinity)         // scrollbar to the left
         }
     }
 }
