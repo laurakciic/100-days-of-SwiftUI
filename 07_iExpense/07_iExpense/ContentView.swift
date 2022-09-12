@@ -12,6 +12,8 @@ struct ContentView: View {
     
     @State private var showingAddExpense = false
     
+    let localCurrency: FloatingPointFormatStyle<Double>.Currency = .currency(code: Locale.current.currencyCode ?? "EUR")
+    
     var body: some View {
         NavigationView {
             List {
@@ -24,7 +26,7 @@ struct ContentView: View {
                         }
                         Spacer()
                         
-                        Text(item.amount, format: .currency(code: Locale.current.currencyCode ?? "EUR"))
+                        Text(item.amount, format: localCurrency)
                             .foregroundColor(expenseStyle(forAmount: Int(item.amount)))
                         
                     }
@@ -53,7 +55,7 @@ struct ContentView: View {
         switch amount {
         case Int.min...10:
             return .green
-        case 11...99:
+        case 11...100:
             return .orange
         default:
             return .red
