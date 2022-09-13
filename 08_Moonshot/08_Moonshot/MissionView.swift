@@ -27,6 +27,12 @@ struct MissionView: View {
                         .frame(maxWidth: geometry.size.width * 0.6)         // 60% of available screen width
                         .padding(.top)
                     
+                    if let date = mission.launchDate {
+                        Label(date.formatted(date: .complete, time: .omitted), systemImage: "calendar")
+                    } else {
+                        Text("🚀 💔")
+                    }
+                    
                     VStack(alignment: .leading) {
                         Rectangle()                                         // divider
                             .frame(height: 2)
