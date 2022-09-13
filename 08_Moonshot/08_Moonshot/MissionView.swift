@@ -25,7 +25,7 @@ struct MissionView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(maxWidth: geometry.size.width * 0.6)         // 60% of available screen width
-                        .padding(.top)
+                        .padding(.vertical)
                     
                     if let date = mission.launchDate {
                         Label(date.formatted(date: .complete, time: .omitted), systemImage: "calendar")
