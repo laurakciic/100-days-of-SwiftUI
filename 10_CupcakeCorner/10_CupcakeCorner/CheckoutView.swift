@@ -10,6 +10,9 @@ import SwiftUI
 struct CheckoutView: View {
     @ObservedObject var order: Order
     
+    @State private var confirmationMessage = ""
+    @State private var showingConfirmation = false
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -24,12 +27,48 @@ struct CheckoutView: View {
             
                 Text("Your total is \(order.cost, format: .currency(code: "USD"))").font(.title)
                 
-                Button("Place order", action: {  })
+                Button("Place order") {
+                    Task {
+                        await placeOrder()
+                    }
+                }
                     .padding()
             }
         }
         .navigationTitle("Checkout")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Thank you", isPresented: $showingConfirmation) {
+            Button("OK") { }
+        } message: {
+            Text(confirmationMessage)
+        }
+    }
+    
+    func placeOrder() async {
+        // 1. convert order object into json
+        guard let encoded = try? JSONEncoder().encode(order) else {
+            print("Failed to encode order")
+            return
+        }
+        
+        // 2. tel swift how to send data
+        let url = URL(string: "https://reqres.in/api/cupcakes")!
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")    // info has type of application/json
+        request.httpMethod = "POST"                                                 // write post info
+        
+        // 3. run request and do something with response
+        do {
+            // upload call
+            let (data, _) = try await URLSession.shared.upload(for: request, from: encoded)
+            
+            // handle result
+            let decodedOrder = try JSONDecoder().decode(Order.self, from: data)
+            confirmationMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is on its way!"
+            showingConfirmation = true
+        } catch {
+            print("Checkout failed.")
+        }
     }
 }
 
