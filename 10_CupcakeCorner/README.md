@@ -1,10 +1,10 @@
 # Cupcake Corner
 ## 📌 Project10: order cupcakes online
 
-![image1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/10_CupcakeCorner/10_CupcakeCorner/gitAssets/1.png)
-![image2](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/10_CupcakeCorner/10_CupcakeCorner/gitAssets/2.png)
-![image3](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/10_CupcakeCorner/10_CupcakeCorner/gitAssets/3.png)
-![image4](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/10_CupcakeCorner/10_CupcakeCorner/gitAssets/4.png)
+![image1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/10_CupcakeCorner/10_CupcakeCorner/gitAssets/n1.png)
+![image2](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/10_CupcakeCorner/10_CupcakeCorner/gitAssets/n2.png)
+![image3](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/10_CupcakeCorner/10_CupcakeCorner/gitAssets/n3.png)
+![image4](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/10_CupcakeCorner/10_CupcakeCorner/gitAssets/n4.png)
 
 ## Topics
 
