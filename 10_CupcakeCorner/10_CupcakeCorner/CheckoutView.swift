@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CheckoutView: View {
-    @ObservedObject var order: Order
+    @ObservedObject var order: SharedOrder
     
     @State private var confirmationMessage = ""
     @State private var showingConfirmation = false
@@ -51,11 +51,11 @@ struct CheckoutView: View {
         } message: {
             Text(errorMessage)
         }
-    }
+    } 
     
     func placeOrder() async {
         // 1. convert order object into json
-        guard let encoded = try? JSONEncoder().encode(order) else {
+        guard let encoded = try? JSONEncoder().encode(order.data) else {
             print("Failed to encode order")
             return
         }
@@ -64,7 +64,7 @@ struct CheckoutView: View {
         let url = URL(string: "https://reqres.in/api/cupcakes")!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")    // info has type of application/json
-        //request.httpMethod = "POST"                                                 // write post info
+        request.httpMethod = "POST"                                                 // write post info
         
         // 3. run request and do something with response
         do {
@@ -73,7 +73,7 @@ struct CheckoutView: View {
             
             // handle result
             let decodedOrder = try JSONDecoder().decode(Order.self, from: data)
-            confirmationMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is on its way!"
+            confirmationMessage = "Your order for \(decodedOrder.quantity)x \(SharedOrder.types[decodedOrder.type].lowercased()) cupcakes is on its way!"
             showingConfirmation = true
         } catch {
             errorMessage = "Checkout failed.\n\nMessage: \(error.localizedDescription)"
@@ -84,6 +84,6 @@ struct CheckoutView: View {
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutView(order: Order())
+        CheckoutView(order: SharedOrder())
     }
 }

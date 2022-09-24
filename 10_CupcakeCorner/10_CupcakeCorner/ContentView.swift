@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var order = Order()         // creates object, everywhere else it will be shared
+    @StateObject var order = SharedOrder()         // creates object, everywhere else it will be shared
     
     var body: some View {
         NavigationView {
             Form {
                 Section {
                     Picker("Select your cake type", selection: $order.type) {
-                        ForEach(Order.types.indices) {    // indices: read val from array in desc
-                            Text(Order.types[$0])         // index passed in: 0,1,2,3
+                        ForEach(SharedOrder.types.indices) {    // indices: read val from array in desc
+                            Text(SharedOrder.types[$0])         // index passed in: 0,1,2,3
                         }
                     }
                     

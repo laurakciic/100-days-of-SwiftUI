@@ -7,18 +7,43 @@
 
 import SwiftUI
 
-class Order: ObservableObject, Codable {
+@dynamicMemberLookup   // allows to dynamically handle access properties that don't exist directly already there
+class SharedOrder: ObservableObject {
     
+    static let types = ["Vanilla", "Strawberry", "Chocolate", "Rainbow"]
+    
+    @Published var data = Order()
+    
+    // subscripts allow us read & raise things like scores, dictionaries using address, zip or similar
+    
+    // custom subscript using dynamicMember keyPath - must be specified as a property on Order struct
+    // we can access some order.something as long as it exists as property on Order struct - Generics
+    // T is the return value of subscript - whatever value of the order property is
+    subscript<T>(dynamicMember keyPath: KeyPath<Order, T>) -> T {
+        data[keyPath: keyPath]                  // pass it on through
+    }
+    
+    // second subscript - writable keypath with an Order value with getter & setter
+    subscript<T>(dynamicMember keyPath: WritableKeyPath<Order, T>) -> T {
+        get {
+            data[keyPath: keyPath]
+        }
+        
+        set {
+            data[keyPath: keyPath] = newValue   // write it with the new value
+        }
+    }
+}
+
+struct Order: Codable {
     enum CodingKeys: CodingKey {
         case type, quantity, extraFrosting, addSprinkles, name, streetAddress, city, zip
     }
     
-    static let types = ["Vanilla", "Strawberry", "Chocolate", "Rainbow"]
+    var type = 0
+    var quantity = 3
     
-    @Published var type = 0
-    @Published var quantity = 3
-    
-    @Published var specialRequestEnabled = false {
+    var specialRequestEnabled = false {
         didSet {
             if specialRequestEnabled == false {
                 extraFrosting = false
@@ -26,13 +51,13 @@ class Order: ObservableObject, Codable {
             }
         }
     }
-    @Published var extraFrosting = false
-    @Published var addSprinkles = false
+    var extraFrosting = false
+    var addSprinkles = false
     
-    @Published var name = ""
-    @Published var streetAddress = ""
-    @Published var city = ""
-    @Published var zip = ""
+    var name = ""
+    var streetAddress = ""
+    var city = ""
+    var zip = ""
     
     var hasValidAddress: Bool {
         if name.isWhiteSpaceRemoved || streetAddress.isWhiteSpaceRemoved || city.isWhiteSpaceRemoved || zip.isWhiteSpaceRemoved {
@@ -59,35 +84,5 @@ class Order: ObservableObject, Codable {
         }
         
         return cost
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        
-        try container.encode(type, forKey: .type)
-        try container.encode(quantity, forKey: .quantity)
-        try container.encode(extraFrosting, forKey: .extraFrosting)
-        try container.encode(addSprinkles, forKey: .addSprinkles)
-        
-        try container.encode(name, forKey: .name)
-        try container.encode(streetAddress, forKey: .streetAddress)
-        try container.encode(city, forKey: .city)
-        try container.encode(zip, forKey: .zip)
-    }
-    
-    init() {  }
-    
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        type = try container.decode(Int.self, forKey: .type)
-        quantity = try container.decode(Int.self, forKey: .quantity)
-        extraFrosting = try container.decode(Bool.self, forKey: .extraFrosting)
-        addSprinkles = try container.decode(Bool.self, forKey: .addSprinkles)
-        
-        name = try container.decode(String.self, forKey: .name)
-        streetAddress = try container.decode(String.self, forKey: .streetAddress)
-        city = try container.decode(String.self, forKey: .city)
-        zip = try container.decode(String.self, forKey: .zip)
     }
 }
