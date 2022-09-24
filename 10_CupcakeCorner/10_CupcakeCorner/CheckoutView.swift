@@ -13,6 +13,9 @@ struct CheckoutView: View {
     @State private var confirmationMessage = ""
     @State private var showingConfirmation = false
     
+    @State private var errorMessage = ""
+    @State private var showingError = false
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -42,6 +45,12 @@ struct CheckoutView: View {
         } message: {
             Text(confirmationMessage)
         }
+        
+        .alert("Oops", isPresented: $showingError) {
+            Button("OK") { }
+        } message: {
+            Text(errorMessage)
+        }
     }
     
     func placeOrder() async {
@@ -55,7 +64,7 @@ struct CheckoutView: View {
         let url = URL(string: "https://reqres.in/api/cupcakes")!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")    // info has type of application/json
-        request.httpMethod = "POST"                                                 // write post info
+        //request.httpMethod = "POST"                                                 // write post info
         
         // 3. run request and do something with response
         do {
@@ -67,7 +76,8 @@ struct CheckoutView: View {
             confirmationMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is on its way!"
             showingConfirmation = true
         } catch {
-            print("Checkout failed.")
+            errorMessage = "Checkout failed.\n\nMessage: \(error.localizedDescription)"
+            showingError = true
         }
     }
 }
