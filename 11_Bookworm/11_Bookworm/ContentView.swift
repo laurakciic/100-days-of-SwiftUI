@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc    // to store view context for coordinator model so we can use that later to delete books
-    @FetchRequest(sortDescriptors: []) var books: FetchedResults<Book>  // reading saved books so we can show updates on UI
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.title),
+        SortDescriptor(\.author)
+    ]) var books: FetchedResults<Book>  // reading saved books so we can show updates on UI
     
     @State private var showingAddScreen = false
     
