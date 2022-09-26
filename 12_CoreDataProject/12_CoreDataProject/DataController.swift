@@ -20,7 +20,12 @@ class DataController: ObservableObject {    // so we can use @State object with 
         containter.loadPersistentStores { description, error in
             if let error = error {
                 print("Core Data failed to load: \(error.localizedDescription)")
+                return
             }
+            
+            // merge objects based on their properties to decide which ones to overwrite based on the version it has in DB and a new version we have
+            // will produce a new object by merging properties of the old & new together
+            self.containter.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         }
     }
 }
