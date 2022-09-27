@@ -8,36 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var image: Image?
-    @State private var inputImage: UIImage?
-    @State private var showingImagePicker = false
     
     var body: some View {
-        VStack {
-            image?
-                .resizable()
-                .scaledToFit()
-            
-            Button("Select Image") {
-                showingImagePicker = true
-            }
-            
-            Button("Save Image") {
-                guard let inputImage = inputImage else { return }
-                
-                let imageSaver = ImageSaver()
-                imageSaver.writeToPhotoAlbum(image: inputImage)
-            }
-        }
-        .sheet(isPresented: $showingImagePicker) {
-            ImagePicker(image: $inputImage)         // ImagePicker is bound to the image of our $inputImage - binding
-        }                                           // will read & write UIImage into local @State property inputImage
-        .onChange(of: inputImage) { _ in loadImage() }      // ignore new value coming in and just call loadImage (read inputImg from there)
-    }
-    
-    func loadImage() {
-        guard let inputImage = inputImage else { return }   // check whether inputImage has value
-        image = Image(uiImage: inputImage)                  // put it into a new Image view inside that property
+       Text("wi")
     }
 }
 
