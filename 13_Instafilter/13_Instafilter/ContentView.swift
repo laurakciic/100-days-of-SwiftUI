@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var image: Image?
+    @State private var image: Image?                    // bc initially user won't have selected an image
     @State private var filterIntensity = 0.5
     
     var body: some View {
-        NavigationView {
+        NavigationView {    // so we can show app's name at the top
             VStack{
                 ZStack {
-                    Rectangle()
+                    Rectangle()                         // large gray box over which we'll place imported pic
                         .fill(.secondary)
                     
                     Text("Tap to select a picture")
