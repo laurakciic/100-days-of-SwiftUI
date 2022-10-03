@@ -11,6 +11,9 @@ struct ContentView: View {
     @State private var image: Image?                    // bc initially user won't have selected an image
     @State private var filterIntensity = 0.5
     
+    @State private var showingImagePicker = false
+    @State private var inputImage: UIImage?             // store image user selected
+    
     var body: some View {
         NavigationView {    // so we can show app's name at the top
             VStack{
@@ -27,7 +30,7 @@ struct ContentView: View {
                         .scaledToFit()
                 }
                 .onTapGesture {
-                    // select an image
+                    showingImagePicker = true
                 }
                 
                 HStack {
@@ -48,7 +51,16 @@ struct ContentView: View {
             }
             .padding([.horizontal, .bottom])
             .navigationTitle("Instafilter")
+            .onChange(of: inputImage) { _ in loadImage() }      // when ImagePicker has been dismissed / inputImage value changes
+            .sheet(isPresented: $showingImagePicker) {          // present ImagePicker bound to inputImage
+                ImagePicker(image: $inputImage)
+            }
         }
+    }
+    
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        image = Image(uiImage: inputImage)
     }
     
     func save() {

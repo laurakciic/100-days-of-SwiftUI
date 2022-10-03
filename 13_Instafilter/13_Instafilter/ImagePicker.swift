@@ -8,9 +8,11 @@
 import PhotosUI     // picker
 import SwiftUI      // representable stuff
 
+// wraps UIViewControllerRepresentable
+
 struct ImagePicker: UIViewControllerRepresentable {     // makes a view that can go inside SwiftUI alongside text, images, sliders...
     
-    @Binding var image: UIImage?                        // binding so it can send back changes to the main SwiftUI view 
+    @Binding var image: UIImage?                        // binding so it can send back changes to the main SwiftUI view, when @Binding property changes, external value changes
     
     // NSObject               - base class of UIKit hierarchy (all UIViews come from NSObject) - objectiveC allowing us to talk to it at runtime
     // PHPickerViewController - for detecting when user chose an image
