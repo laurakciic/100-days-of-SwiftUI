@@ -55,7 +55,7 @@ struct GridLayout: View {
 
 struct GridLayout_Previews: PreviewProvider {
     static var previews: some View {
-        GridLayout(astronauts: Bundle.main.decode("astronauts.json"), missions: Bundle.main.decode("missions.json"))
+        GridLayout(astronauts: FileManager.default.decode("astronauts.json"), missions: FileManager.default.decode("missions.json"))
             .preferredColorScheme(.dark)
     }
 }

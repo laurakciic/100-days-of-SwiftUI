@@ -75,8 +75,11 @@ struct MissionView: View {
 
 struct MissionView_Previews: PreviewProvider {
     
-    static let missions: [Mission] = Bundle.main.decode("missions.json")
-    static let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+    //static let missions: [Mission] = Bundle.main.decode("missions.json")
+    //static let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+    
+    static let missions: [Mission] = FileManager.default.decode("missions.json")
+    static let astronauts: [String: Astronaut] = FileManager.default.decode("astronauts.json")
     
     static var previews: some View {
         MissionView(mission: missions[0], astronauts: astronauts)

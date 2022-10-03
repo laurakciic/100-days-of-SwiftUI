@@ -40,7 +40,7 @@ struct ListLayout: View {
 
 struct ListLayout_Previews: PreviewProvider {
     static var previews: some View {
-        ListLayout(astronauts: Bundle.main.decode("astronauts.json"), missions: Bundle.main.decode("missions.json"))
+        ListLayout(astronauts: FileManager.default.decode("astronauts.json"), missions: FileManager.default.decode("missions.json"))
             .preferredColorScheme(.dark)
     }
 }
