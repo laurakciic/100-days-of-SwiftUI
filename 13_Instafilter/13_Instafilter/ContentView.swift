@@ -15,7 +15,8 @@ import SwiftUI
 struct ContentView: View {
     @State private var image: Image?                    // bc initially user won't have selected an image
     @State private var filterIntensity = 0.5
-    @State private var filterRadius = 0.5
+    @State private var filterRadius = 5.0
+    @State private var filterScale = 5.0
     
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?             // store image user selected
@@ -47,19 +48,32 @@ struct ContentView: View {
                     showingImagePicker = true
                 }
                 
-                HStack {
-                    Text("Intensity")
-                    Slider(value: $filterIntensity)
-                        .onChange(of: filterIntensity) { _ in applyProcessing() }
+                if currentFilter.inputKeys.contains(kCIInputIntensityKey) {
+                    HStack {
+                        Text("Intensity")
+                        Slider(value: $filterIntensity)
+                            .onChange(of: filterIntensity) { _ in applyProcessing() }
+                    }
+                    .padding()
                 }
-                .padding()
                 
-                HStack {
-                    Text("Radius")
-                    Slider(value: $filterRadius)
-                        .onChange(of: filterRadius) { _ in applyProcessing() }
+                if currentFilter.inputKeys.contains(kCIInputRadiusKey) {
+                    HStack {
+                        Text("Radius")
+                        Slider(value: $filterRadius, in: 0...200)
+                            .onChange(of: filterRadius) { _ in applyProcessing() }
+                    }
+                    .padding()
                 }
-                .padding()
+
+                if currentFilter.inputKeys.contains(kCIInputScaleKey) {
+                    HStack {
+                        Text("Scale")
+                        Slider(value: $filterScale, in: 0...10)
+                            .onChange(of: filterScale) { _ in applyProcessing() }
+                    }
+                    .padding()
+                }
                 
                 HStack{
                     Button("Change filter") {
@@ -80,10 +94,13 @@ struct ContentView: View {
             }
         }
         .confirmationDialog("Select a filter", isPresented: $showingFilterSheet) {
+            Button("Bloom") { setFilter(CIFilter.bloom()) }
             Button("Crystallize") { setFilter(CIFilter.crystallize()) }
             Button("Edges") { setFilter(CIFilter.edges()) }
             Button("Gaussian Blur") { setFilter(CIFilter.gaussianBlur()) }
+            Button("Noir") { setFilter(CIFilter.photoEffectNoir()) }
             Button("Pixellate") { setFilter(CIFilter.pixellate()) }
+            Button("Pointillize") { setFilter(CIFilter.pointillize()) }
             Button("Sepia Tone") { setFilter(CIFilter.sepiaTone()) }
             Button("Unsharp Mask") { setFilter(CIFilter.unsharpMask()) }
             Button("Cancel", role: .cancel) { }
@@ -134,11 +151,11 @@ struct ContentView: View {
         }
         
         if inputKeys.contains(kCIInputRadiusKey) {
-            currentFilter.setValue(filterRadius * 200, forKey: kCIInputRadiusKey)       // set filter radius
+            currentFilter.setValue(filterRadius, forKey: kCIInputRadiusKey)       // set filter radius
         }
         
         if inputKeys.contains(kCIInputScaleKey) {
-            currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey)      // set filter scale
+            currentFilter.setValue(filterScale, forKey: kCIInputScaleKey)      // set filter scale
         }
         
         guard let outputImage = currentFilter.outputImage else { return }               // read output img back from the filter
