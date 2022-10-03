@@ -31,7 +31,7 @@ Projects / Topics                                                               
 [Challenge 2](Challenge2_Rock_Paper_Scissors) - *Rock Paper Scissors*  | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/Challenge2_Rock_Paper_Scissors/Challenge2_Rock_Paper_Scissors/gitAssets/mini.png) |
 [Project 4](04_BetterRest) - *BetterRest* <br/>                                       <br/><sub> Machine Learning, Dates (DatePicker, DateComponents, DateFormatter), Stepper </sub> | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/04_BetterRest/04_BetterRest/gitAssets/mini.png) |
 [Project 10](10_CupcakeCorner) - *CupcakeCorner* <br/>                                        <br/><sub> Codable, URLSession, disabled() </sub> | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/10_CupcakeCorner/10_CupcakeCorner/gitAssets/mini.png)|
-[Project 13](13_Instafilter) - *InstFilter* <br/>                                        <br/><sub> UIKit integration, Core Image, Custom bindings, Action sheets </sub> | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/13_Instafilter/gitAssets/mini.png)|
+[Project 13](13_Instafilter) - *InstaFilter* <br/>                                        <br/><sub> UIKit integration, Core Image, Custom bindings, Action sheets </sub> | ![screen1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/13_Instafilter/gitAssets/mini.png)|
 
 
 
