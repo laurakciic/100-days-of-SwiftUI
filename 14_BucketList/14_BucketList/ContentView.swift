@@ -7,26 +7,30 @@
 
 import SwiftUI
 
-struct User: Identifiable, Comparable {
-    let id = UUID()
-    let firstName: String
-    let lastName: String
-    
-    static func <(lhs: User, rhs: User) -> Bool {           // left/right hand side
-        lhs.lastName < rhs.lastName
-    }
-}
-
 struct ContentView: View {
-    let users = [
-    User(firstName: "Laura", lastName: "Kovačić"),
-    User(firstName: "Luka", lastName: "Rončević")
-    ].sorted()
-    
     var body: some View {
-        List(users) { user in
-            Text("\(user.firstName) \(user.lastName)")
-        }
+        Text("Hello, world!")
+            .onTapGesture {
+                let str = "Test Message"
+                let url = getDocumentsDirectory().appendingPathComponent("message.txt")
+                
+                do {
+                    try str.write(to: url, atomically: true, encoding: .utf8)   // atomic - all at once, writes to a temp file then renames it to the target filename, which means either the whole file is there, or nothing is
+                                                                                            
+                    let input = try String(contentsOf: url)
+                    print(input)
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        // find all possible documents directories for this user
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        // return first one, which ought to be the only one
+        return paths[0]
     }
 }
 
