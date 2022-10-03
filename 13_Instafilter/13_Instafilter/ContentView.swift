@@ -25,6 +25,8 @@ struct ContentView: View {
     let context = CIContext()
     
     @State private var showingFilterSheet = false
+    @State private var showingSaveError = false
+    @State private var showingSaveSuccessMsg = false
     
     var body: some View {
         NavigationView {    // so we can show app's name at the top
@@ -67,7 +69,7 @@ struct ContentView: View {
                     Spacer()
                     
                     Button("Save", action: save)
-                        .disabled(image == nil)
+                        .disabled(inputImage == nil)
                 }
             }
             .padding([.horizontal, .bottom])
@@ -86,6 +88,18 @@ struct ContentView: View {
             Button("Unsharp Mask") { setFilter(CIFilter.unsharpMask()) }
             Button("Cancel", role: .cancel) { }
         }
+        .alert("Oops, something went wrong.", isPresented: $showingSaveError) {
+            Button("OK") { }
+        } message: {
+            Text("Please check that you have allowed permission for this app to save photos.")
+        }
+        
+        .alert("Success!", isPresented: $showingSaveSuccessMsg) {
+            Button("OK") { }
+        } message: {
+            Text("Image saved successfully.")
+        }
+        
     }
     
     func loadImage() {
@@ -102,11 +116,11 @@ struct ContentView: View {
         let imageSaver = ImageSaver()
         
         imageSaver.successHandler = {
-            print("Image saved successfully!")
+            showingSaveSuccessMsg = true
         }
         
-        imageSaver.errorHandler = {
-            print("Oops! \($0.localizedDescription)")
+        imageSaver.errorHandler = { _ in
+            showingSaveError = true
         }
         
         imageSaver.writeToPhotoAlbum(image: processedImage)
