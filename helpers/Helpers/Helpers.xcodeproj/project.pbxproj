@@ -1,0 +1,74 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXFileReference section */
+		D3CAF3E128EB073800D97851 /* write-data-to-documents-directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "write-data-to-documents-directory.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		D3CAF3DA28EB070300D97851 = {
+			isa = PBXGroup;
+			children = (
+				D3CAF3E128EB073800D97851 /* write-data-to-documents-directory.swift */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		D3CAF3DB28EB070300D97851 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1340;
+			};
+			buildConfigurationList = D3CAF3DE28EB070300D97851 /* Build configuration list for PBXProject "Helpers" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D3CAF3DA28EB070300D97851;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		D3CAF3DF28EB070300D97851 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		D3CAF3E028EB070300D97851 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3CAF3DE28EB070300D97851 /* Build configuration list for PBXProject "Helpers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3CAF3DF28EB070300D97851 /* Debug */,
+				D3CAF3E028EB070300D97851 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D3CAF3DB28EB070300D97851 /* Project object */;
+}
