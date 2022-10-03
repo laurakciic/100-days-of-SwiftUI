@@ -1,8 +1,9 @@
 # InstaFilter
 ## 📌 Project13: apply filter to photos
 
-![image1]()
-![image1]()
+![image1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/13_Instafilter/gitAssets/image1.png)
+![image2](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/13_Instafilter/gitAssets/image2.png)
+![image3](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/13_Instafilter/gitAssets/image3.png)
 
 ## Topics
 
@@ -13,11 +14,11 @@
 ## 💡 Challenges 
 
 From [Hacking with Swift](https://www.hackingwithswift.com/books/ios-swiftui/instafilter-wrap-up):
->[1.]() Try making the Save button disabled if there is no image in the image view.    
+>[1.](https://github.com/laurakciic/100-days-of-SwiftUI/commit/ec9aea43c73d556c7968e92e069444603701dee6) Try making the Save button disabled if there is no image in the image view.    
            
->[2.]() Experiment with having more than one slider, to control each of the input keys you care about. For example, you might have one for radius and one for intensity.      
+>[2.](https://github.com/laurakciic/100-days-of-SwiftUI/commit/d51581d971433d4900378a45bd8312c552602aac) Experiment with having more than one slider, to control each of the input keys you care about. For example, you might have one for radius and one for intensity.      
   
->[3.]() Explore the range of available Core Image filters, and add any three of your choosing to the app.            
+>[3.](https://github.com/laurakciic/100-days-of-SwiftUI/commit/14af218850b5331032f42047f8ea8552a546d8a1) Explore the range of available Core Image filters, and add any three of your choosing to the app.            
 
 <br/>
 
