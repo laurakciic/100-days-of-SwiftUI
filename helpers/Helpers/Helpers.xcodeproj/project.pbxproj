@@ -8,6 +8,8 @@
 
 /* Begin PBXFileReference section */
 		D3CAF3E128EB073800D97851 /* write-data-to-documents-directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "write-data-to-documents-directory.swift"; sourceTree = "<group>"; };
+		D3CAF3E228EB086100D97851 /* image-picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "image-picker.swift"; sourceTree = "<group>"; };
+		D3CAF3E328EB089700D97851 /* image-saver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "image-saver.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -15,6 +17,8 @@
 			isa = PBXGroup;
 			children = (
 				D3CAF3E128EB073800D97851 /* write-data-to-documents-directory.swift */,
+				D3CAF3E228EB086100D97851 /* image-picker.swift */,
+				D3CAF3E328EB089700D97851 /* image-saver.swift */,
 			);
 			sourceTree = "<group>";
 		};
