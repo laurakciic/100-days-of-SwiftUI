@@ -18,6 +18,7 @@ struct ContentView: View {
     
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?             // store image user selected
+    @State private var processedImage: UIImage?
     
     @State private var currentFilter: CIFilter = CIFilter.sepiaTone()      // conform to CIFilter
     let context = CIContext()
@@ -87,7 +88,19 @@ struct ContentView: View {
     }
     
     func save() {
+        guard let processedImage = processedImage else { return }
         
+        let imageSaver = ImageSaver()
+        
+        imageSaver.successHandler = {
+            print("Image saved successfully!")
+        }
+        
+        imageSaver.errorHandler = {
+            print("Oops! \($0.localizedDescription)")
+        }
+        
+        imageSaver.writeToPhotoAlbum(image: processedImage)
     }
     
     func applyProcessing() {
@@ -108,8 +121,9 @@ struct ContentView: View {
         guard let outputImage = currentFilter.outputImage else { return }               // read output img back from the filter
         
         if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {       // ask context to render output img
-            let uiImage = UIImage(cgImage: cgimg)                                           // convert back to UI img
+            let uiImage = UIImage(cgImage: cgimg)                                           // convert to UI img so we can save it to album
             image = Image(uiImage: uiImage)                                                 // place result into image so it's visible
+            processedImage = uiImage                                                        // copy for later on
         }
     }
     
