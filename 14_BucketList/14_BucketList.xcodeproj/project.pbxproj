@@ -13,6 +13,7 @@
 		D38B943428EAF01D00CCBF27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D38B943328EAF01D00CCBF27 /* Preview Assets.xcassets */; };
 		D3CAF3E728EC1D4700D97851 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CAF3E628EC1D4700D97851 /* Location.swift */; };
 		D3CAF3EB28EC28C100D97851 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CAF3EA28EC28C100D97851 /* EditView.swift */; };
+		D3CAF3ED28EC5B6500D97851 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CAF3EC28EC5B6500D97851 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		D38B943328EAF01D00CCBF27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3CAF3E628EC1D4700D97851 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		D3CAF3EA28EC28C100D97851 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		D3CAF3EC28EC5B6500D97851 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				D38B942C28EAF01B00CCBF27 /* _4_BucketListApp.swift */,
 				D38B942E28EAF01B00CCBF27 /* ContentView.swift */,
 				D3CAF3EA28EC28C100D97851 /* EditView.swift */,
+				D3CAF3EC28EC5B6500D97851 /* Result.swift */,
 				D3CAF3E628EC1D4700D97851 /* Location.swift */,
 				D38B943028EAF01D00CCBF27 /* Assets.xcassets */,
 				D38B943228EAF01D00CCBF27 /* Preview Content */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D38B942F28EAF01B00CCBF27 /* ContentView.swift in Sources */,
+				D3CAF3ED28EC5B6500D97851 /* Result.swift in Sources */,
 				D3CAF3E728EC1D4700D97851 /* Location.swift in Sources */,
 				D3CAF3EB28EC28C100D97851 /* EditView.swift in Sources */,
 				D38B942D28EAF01B00CCBF27 /* _4_BucketListApp.swift in Sources */,
