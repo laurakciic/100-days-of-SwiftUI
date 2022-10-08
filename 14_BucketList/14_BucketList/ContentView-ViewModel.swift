@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import LocalAuthentication
 import MapKit
 
 // @MainActor - responsible for running all UI updates
@@ -19,6 +20,7 @@ extension ContentView {
         @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
         @Published private(set) var locations: [Location]       // only the class itself can set locations
         @Published var selectedPlace: Location?                 // for handling sheet
+        @Published var isUnlocked = false
         
         let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedPlaces")     // same file for reading & writing
         
@@ -55,6 +57,27 @@ extension ContentView {
             if let index = locations.firstIndex(of: selectedPlace) {        // track it with index  (find current place of index in array)
                 locations[index] = location                                 // override it with new location
                 save()
+            }
+        }
+        
+        func authenticate() {
+            let context = LAContext()
+            var error: NSError?
+            
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+                let reason = "Please authenticate yourself to unlock your places."
+                
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+                    if success {
+                        Task {  @MainActor in           // running on main actor bc evaluatePolicy which calls this closure 
+                            self.isUnlocked = true
+                        }
+                    } else {
+                        // error
+                    }
+                }
+            } else {
+                // no biometrics 
             }
         }
     }
