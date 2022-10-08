@@ -8,16 +8,14 @@
 import MapKit
 import SwiftUI
 
-struct ContentView: View {
-    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
+// @StateObject - everytime I call ViewModel inside View it will be on the main actor
 
-    @State private var locations = [Location]()
-    
-    @State private var selectedPlace: Location?                 // for handling sheet
+struct ContentView: View {
+    @StateObject private var viewModel = ViewModel()
     
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $mapRegion, annotationItems: locations) { location in
+            Map(coordinateRegion: $viewModel.mapRegion, annotationItems: viewModel.locations) { location in
                 MapAnnotation(coordinate: location.coordinate) {
                     VStack {
                         Image(systemName: "star.circle")
@@ -31,7 +29,7 @@ struct ContentView: View {
                             .fixedSize()
                     }
                     .onTapGesture {
-                        selectedPlace = location
+                        viewModel.selectedPlace = location
                     }
                 }
             }
@@ -49,8 +47,7 @@ struct ContentView: View {
                     Spacer()    // push to trailing edge
                     
                     Button {
-                        let newLocation = Location(id: UUID(), name: "New location", description: "", latitude: mapRegion.center.latitude, longitude: mapRegion.center.longitude)
-                        locations.append(newLocation)
+                        viewModel.addLocation()
                     } label: {
                         Image(systemName: "plus")
                     }
@@ -63,11 +60,9 @@ struct ContentView: View {
                 }
             }
         }
-        .sheet(item: $selectedPlace) { place in                         // place - the one currently chosen, unwrapped
-            EditView(location: place) { newLocation in                  // if we can find that location in array
-                if let index = locations.firstIndex(of: place) {        // track it with index  (find current place of index in array)
-                    locations[index] = newLocation                      // override it with new location
-                }
+        .sheet(item: $viewModel.selectedPlace) { place in                         // place - the one currently chosen, unwrapped
+            EditView(location: place) { newLocation in                            // if we can find that location in array
+                viewModel.update(location: newLocation)
             }
         }
     }
