@@ -1,5 +1,7 @@
 # BucketList
-## 📌 Project14: 
+## 📌 Project14
+
+BucketList is an app that lets the user build a private list of places on the map that they intend to visit one day, add a description for that place, look up interesting places that are nearby, and save it all to the iOS storage for later.
 
 ![image1](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/14_BucketList/14_BucketList/gitAssets/1.png)
 ![image2](https://github.com/laurakciic/100-days-of-SwiftUI/blob/master/14_BucketList/14_BucketList/gitAssets/2.png)
