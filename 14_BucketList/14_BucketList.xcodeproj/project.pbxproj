@@ -16,6 +16,7 @@
 		D3CAF3ED28EC5B6500D97851 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CAF3EC28EC5B6500D97851 /* Result.swift */; };
 		D3CAF3EF28F1D35100D97851 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CAF3EE28F1D35100D97851 /* ContentView-ViewModel.swift */; };
 		D3CAF3F128F1D85D00D97851 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CAF3F028F1D85D00D97851 /* FileManager-DocumentsDirectory.swift */; };
+		D3CAF3F328F30DD500D97851 /* EditView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CAF3F228F30DD500D97851 /* EditView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D3CAF3EC28EC5B6500D97851 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		D3CAF3EE28F1D35100D97851 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 		D3CAF3F028F1D85D00D97851 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
+		D3CAF3F228F30DD500D97851 /* EditView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				D3CAF3EA28EC28C100D97851 /* EditView.swift */,
 				D3CAF3EC28EC5B6500D97851 /* Result.swift */,
 				D3CAF3EE28F1D35100D97851 /* ContentView-ViewModel.swift */,
+				D3CAF3F228F30DD500D97851 /* EditView-ViewModel.swift */,
 				D3CAF3E628EC1D4700D97851 /* Location.swift */,
 				D3CAF3F028F1D85D00D97851 /* FileManager-DocumentsDirectory.swift */,
 				D38B943028EAF01D00CCBF27 /* Assets.xcassets */,
@@ -157,6 +160,7 @@
 				D3CAF3EF28F1D35100D97851 /* ContentView-ViewModel.swift in Sources */,
 				D3CAF3ED28EC5B6500D97851 /* Result.swift in Sources */,
 				D3CAF3E728EC1D4700D97851 /* Location.swift in Sources */,
+				D3CAF3F328F30DD500D97851 /* EditView-ViewModel.swift in Sources */,
 				D3CAF3EB28EC28C100D97851 /* EditView.swift in Sources */,
 				D38B942D28EAF01B00CCBF27 /* _4_BucketListApp.swift in Sources */,
 			);
