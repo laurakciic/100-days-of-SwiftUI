@@ -74,6 +74,11 @@ struct ContentView: View {
             .background(.black)
             .foregroundColor(.white)
             .clipShape(Capsule())
+            .alert("Authentication error", isPresented: $viewModel.showingAuthenticationError) {
+                Button("OK") { }
+            } message: {
+                Text(viewModel.authenticationError)
+            }
         }
     }
 }
