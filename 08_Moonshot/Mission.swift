@@ -17,6 +17,7 @@ struct Mission: Codable, Identifiable {
     let launchDate: Date?
     let crew: [CrewRole]
     let description: String
+//    let badge: String         // missing additional info in json files
     
     var displayName: String {
         "Apollo \(id)"
