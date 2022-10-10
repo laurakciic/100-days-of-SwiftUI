@@ -33,6 +33,9 @@ struct ContentView: View {
                             Image(systemName: "\(word.count).circle.fill")
                             Text(word)
                         }
+                        .accessibilityElement()                             // ignore children - grouping in single voiceover
+                        .accessibilityLabel(word)
+                        .accessibilityHint("\(word.count) letters")
                     }
                 }
             }
