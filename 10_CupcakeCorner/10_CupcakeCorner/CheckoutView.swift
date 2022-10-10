@@ -27,6 +27,7 @@ struct CheckoutView: View {
                     ProgressView()
                 }
                 .frame(height: 233)     // whole async img, bc it will reserve enough space for the img
+                .accessibilityHidden(true)
             
                 Text("Your total is \(order.cost, format: .currency(code: "USD"))").font(.title)
                 
