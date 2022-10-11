@@ -7,10 +7,35 @@
 
 import SwiftUI
 
-struct ContentView: View {
+@MainActor class User: ObservableObject {
+    @Published var name = "Laura"
+}
+
+struct EditView: View {
+    @EnvironmentObject var user: User               // property wrapper looks for a user instance in the environment and place it into the property
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TextField("Name", text: $user.name)
+    }
+}
+
+struct DisplayView: View {
+    @EnvironmentObject var user: User
+    
+    var body: some View {
+        Text(user.name)
+    }
+}
+
+struct ContentView: View {
+    @StateObject var user = User()
+    
+    var body: some View {
+        VStack {
+            EditView()
+            DisplayView()
+        }
+        .environmentObject(user)                    // available for child views inside VStack
     }
 }
 
