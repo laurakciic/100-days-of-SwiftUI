@@ -7,35 +7,25 @@
 
 import SwiftUI
 
-@MainActor class User: ObservableObject {
-    @Published var name = "Laura"
-}
-
-struct EditView: View {
-    @EnvironmentObject var user: User               // property wrapper looks for a user instance in the environment and place it into the property
-    
-    var body: some View {
-        TextField("Name", text: $user.name)
-    }
-}
-
-struct DisplayView: View {
-    @EnvironmentObject var user: User
-    
-    var body: some View {
-        Text(user.name)
-    }
-}
-
 struct ContentView: View {
-    @StateObject var user = User()
+    @State private var selectedTab = "One"
     
     var body: some View {
-        VStack {
-            EditView()
-            DisplayView()
+        TabView(selection: $selectedTab) {                   // binding so it can be tracked by TabView and remember which view is on
+            Text("Tab 1")
+                .onTapGesture {
+                    selectedTab = "Two"
+                }
+                .tabItem {
+                    Label("One", systemImage: "star")
+                }
+            
+            Text("Tab 2")
+                .tabItem {
+                    Label("Two", systemImage: "circle")
+                }
+                .tag("Two")                                 // tab identifier
         }
-        .environmentObject(user)                    // available for child views inside VStack
     }
 }
 
