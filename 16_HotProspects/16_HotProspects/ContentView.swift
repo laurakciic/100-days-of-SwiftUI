@@ -8,14 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var backgroundColor = Color.red
+    
     var body: some View {
-        Image("example")
-            .interpolation(.none)                   // useful for QR codes bc we stretch them and they mustn't be blurry
-            .resizable()                            // stretch to fill available space
-            .scaledToFit()
-            .frame(maxHeight: .infinity)
-            .background(.black)
-            .ignoresSafeArea()
+        VStack {
+            Text("Hello, world")
+                .padding()
+                .background(backgroundColor)
+            
+            Text("Change Color")
+                .padding()
+                .contextMenu {
+                    Button(role: .destructive) {        // not actually destructive but makes the btn red
+                        backgroundColor = .red
+                    } label: {
+                        Label("Red", systemImage: "checkmark.circle.fill")
+                    }
+                    
+                    Button("Green") {
+                        backgroundColor = .green
+                    }
+                    
+                    Button("Blue") {
+                        backgroundColor = .blue
+                    }
+                }
+        }
     }
 }
 
