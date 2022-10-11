@@ -11,7 +11,7 @@ import SwiftUI
 struct Challenge5_Illustrated_ContactsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MemoryView()
         }
     }
 }
