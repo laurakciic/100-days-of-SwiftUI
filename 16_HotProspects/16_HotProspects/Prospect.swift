@@ -11,7 +11,7 @@ class Prospect: Identifiable, Codable {         // class bc it allows to change 
     var id = UUID()
     var name = "Anonymus"
     var emailAddress = ""
-    var isContacted = false
+    fileprivate(set) var isContacted = false
 }
 
 @MainActor class Prospects: ObservableObject {
@@ -19,5 +19,10 @@ class Prospect: Identifiable, Codable {         // class bc it allows to change 
     
     init() {
         people = []
+    }
+    
+    func toggle(_ prospect: Prospect) {
+        objectWillChange.send()                // NEEDS TO BE CALLED BEFORE CHANGING VALUES!
+        prospect.isContacted.toggle()
     }
 }
